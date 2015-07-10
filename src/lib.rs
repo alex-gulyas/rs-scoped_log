@@ -10,13 +10,18 @@
 //! extern crate env_logger;
 //!
 //! fn main () {
-//!     env_logger::init().unwrap();
-//!
+//!     let _ = env_logger::init();
+//! 
 //!     scoped_info!("1");
 //!     {
-//!         push_log_scope!("Test");
-//!         scoped_info!("2");
-//!         push_log_scope!("Testing");
+//!         push_log_scope!("outer-scope");
+//!         scoped_info!("2: {}", "some args");
+//!         if false { // Enable to test assert
+//!             scoped_assert!(false);
+//!             scoped_assert!(false, "I failed!");
+//!         }
+//!         push_log_scope!("inner-scope");
+//!         scoped_info!(target: "some-target", "2: {}", "some args");
 //!         Foo.foo();
 //!     }
 //!     scoped_info!("4");
@@ -27,7 +32,7 @@
 //!
 //! impl Foo {
 //!     fn foo(&self) {
-//!         push_log_scope!("{:?}", self);
+//!         push_log_scope!("{:?}-scope", self);
 //!         scoped_info!("3");
 //!     }
 //! }
