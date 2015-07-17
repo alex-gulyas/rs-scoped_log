@@ -1,10 +1,13 @@
 [package]
 name = "scoped_log"
+description = "A helpful wrapper to the log crate offering scoped information"
 version = "0.1.0"
 authors = [
     "Dan Burkert <dan@danburkert.com>",
     "James McGlashan <github@darkfox.id.au>",
 ]
+license = "MIT"
+repository = "https://github.com/james-darkfox/rs-scoped_log"
 
 [dependencies]
 log = "*"
