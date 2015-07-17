@@ -1,4 +1,8 @@
-# Hierachical logger
+# Scoped logger
+
+
+[![](https://img.shields.io/crates/v/scoped_log.svg)](https://crates.io/crates/scoped_log)
+[![](https://img.shields.io/crates/d/scoped_log.svg)](https://crates.io/crates/scoped_log)
 
 Simple wrapper for the log crate that enables adding arbitrary information at
 runtime for future calls to the debugging macros.
