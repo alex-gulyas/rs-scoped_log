@@ -69,7 +69,7 @@ macro_rules! push_log_scope {
                 }
             });
         }
-        let __logger_scoped_message = $crate::Scope
+        let __logger_scoped_message = $crate::Scope;
     );
     ($($arg:tt)+) => (push_log_scope!(format_args!($($arg)+)));
 }
